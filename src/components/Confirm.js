@@ -3,7 +3,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar'; 
 import RaisedButton from 'material-ui/RaisedButton'; 
 import {List, ListItem} from 'material-ui/List';  
+import MainFeaturedPost from './MainFeaturedPost';
 
+const mainFeaturedPost = {
+    title: "ENREGISTREMENT DE SINISTRE D'AXA", 
+    description: "Ce système vous permettras d'enregistrer les informations du Sinistre sans vous déplacer. vous Serez Ensuite contacter par nos agents pour le suivis. ", 
+    image: "https://www.usinenouvelle.com/mediatheque/0/8/5/000797580_896x598_c.png", 
+    imgText: "main image Description"
+
+}
 export class Confirm extends Component {
     continue = e =>{
         e.preventDefault(); 
@@ -23,6 +31,7 @@ export class Confirm extends Component {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
+                    <MainFeaturedPost post={mainFeaturedPost} />
                     <AppBar title = "Confirmer les Informations" />
                     <List>
                         <ListItem primaryText="Titre" secondaryText={title}/>

@@ -3,7 +3,17 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar'; 
 import TextField from 'material-ui/TextField'; 
 import RaisedButton from 'material-ui/RaisedButton'; 
+import MainFeaturedPost from './MainFeaturedPost';
 
+
+
+const mainFeaturedPost = {
+    title: "ENREGISTREMENT DE SINISTRE D'AXA", 
+    description: "Ce système vous permettras d'enregistrer les informations du Sinistre sans vous déplacer. vous Serez Ensuite contacter par nos agents pour le suivis. ", 
+    image: "https://www.usinenouvelle.com/mediatheque/0/8/5/000797580_896x598_c.png", 
+    imgText: "main image Description"
+
+}
 export class ClientForm extends Component {
     continue = e =>{
         e.preventDefault(); 
@@ -14,6 +24,7 @@ export class ClientForm extends Component {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
+                    <MainFeaturedPost post={mainFeaturedPost} />
                     <AppBar title = "Vos Infos Clients" />
                     <TextField 
                         hintText="Votre titre"
@@ -107,15 +118,25 @@ export class ClientForm extends Component {
                         onClick={this.continue}
                         style = {styles.button}
                     />
-
-
+                    <br />
+                    <br />
+                    <br />
+                    <div className ="container-bold"> 
+                        <p>Cette Application fut créer dans le cadre d'un projet scolaire par</p>
+                        <ul>
+                            <li>TRAORE Abdoul Karim</li>
+                            <li>EL OUMGHARI Ikrame</li>
+                            <li>DIALLO MOUHAMMED ABoudrahmane</li>
+                        </ul>
+                        <p>Ainsi, cette Application n'engage en rien AXA</p>
+                    </div>
                 </React.Fragment>
             </MuiThemeProvider>
         )
     }
 }
 
-const styles = {
+const styles = { 
     button: {
         margin: 15
     }
